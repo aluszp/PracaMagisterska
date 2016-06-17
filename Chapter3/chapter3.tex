@@ -214,7 +214,7 @@ After clicking the "Start" button, required structure is loaded and user may sta
 
 Rotating and magnifying of the molecule is one of the most important feature for the properly designed visualization tool. In Molecule VR Viewer it may be accomplished in two ways. First one is simply pressing arrow keys on computer's keyboard for rotation up-down and left-right or scrolling the mouse wheel for zooming in and out. Nevertheless, with a head-mounted display on, user may find pressing the proper key hard, as the \textit{Oculus} headset does not provide transparency and the whole vision is covered with VR. Therefore, the second way is introduced.
 
-Rotating and zooming of the image may be obtained by the Leap Motion Controller, the device already described in subsection \ref{leapmotion}. If it is attached to the HMD, it requires only to extend one arm forward. Then, on the viewer scene the hand model should appear, which is the exact equivalent of the user real hand.
+Rotating and zooming of the image may be obtained by the Leap Motion Controller, the device already described in subsection \ref{leapmotion}. If it is attached to the HMD, it requires only to extend right arm forward. Then, on the viewer scene the hand model should appear, which is the exact equivalent of the user real hand.
 
 To start moving the scene, user needs to make a pinch gesture (with index finger and thumb). Without releasing it, movement of the hand up-down and left-right rotates the molecule. For zooming in, user should pinch and pull it to yourself, for zooming out- pinch and push forward. The hand model making pinch gesture on the Molecular VR Viewer scene illustrates Figure \ref{fig:pinch}.    
 
@@ -231,19 +231,30 @@ Manipulating with \textit{Leap Motion} usage requires a bit of practice. However
 
 In the 3D VR world, traditional, two-dimensional pointers (like computer mouse) do not find an application, obviously due to the lack of one dimension. However, in desktop programs for molecular visualisation, user has the ability of selecting single atom and checking its details. As the new solution should not be less functional, Molecule VR Viewer has another feature that solves this problem. The selecting mode with usage of \textit{Leap Motion} constitutes the solution.
 
-Since this feature is mostly needed for pointing on an atom, it is available only for Van der Waals and Balls and Sticks representations, as these are the only modes that in fact create objects for each atom. After loading a structure in one of these two styles, user may turn on the Selecting mode by pressing the enter key.
+\begin{figure}[!htb]
+\centering    
+\includegraphics[width=0.8\textwidth]{Figs/pointing.png}
+\caption{Pointing with the left hand at the atom. As seen, the cross hair is aimed at the carbon atom number 3, what changed the colour of the sphere from black to bright blue.}
+\label{fig:pointing} 
+\end{figure}
 
-Selecting is held by pointing with an index finger at the chosen atom. Pointed sphere changes its color to the bright blue and the atom's name and number is displayed in the right upper corner. That feature enables searching for the requested fragment. If user wants to become familiar with details of the chosen atom, he or she should point at it for few seconds. Targeting is facilitated by a crosshair, which is simultaneously a progress bar indicating the time that left for the atom details presentation (Figure \ref{fig:selecting}). The time buffer protects the user from accidental pointing on other atoms, which could cause chaotic performance.
-After successful selection of an atom, its name, element, number, residue and chain is displayed in the upper right corner for 5 seconds. In this time user cannot select another sphere. 
+Since this feature is mostly needed for pointing on an atom, it is available only for Van der Waals and Balls and Sticks representations, as these are the only modes that in fact create objects for each atom. After loading a structure in one of these two styles, user may turn on the Selecting mode by extending left arm forward. In other cases, the left hand does not appear on the screen and the mode is inactive.
 
-Escaping from the selecting mode is possible by clicking enter again. 
+Selecting is held by pointing with an index finger at the chosen atom. Pointed sphere changes its color to the bright blue and the atom's name and number is displayed in the right upper corner. That feature enables searching for the requested fragment. If user wants to become familiar with details of the chosen atom, he or she should point at it for few seconds. Targeting is facilitated by a cross hair, which is simultaneously a progress bar indicating the time that left for the atom details presentation (Figure \ref{fig:pointing}). The time buffer protects the user from accidental pointing on other atoms, which could cause chaotic performance.
+After successful selection of an atom, its name, element, number, residue and chain is displayed in the upper right corner for 5 seconds (Figure \ref{fig:selecting}). In this time user cannot select another sphere. 
 
-%\begin{figure}[!htb]
-%\centering    
-%\includegraphics[width=0.8\textwidth]{Figs/selecting.png}
-%\caption{Selection mode.}
-%\label{fig:selecting} 
-%\end{figure}
+Escaping from the selecting mode is possible by hiding left hand out of \textit{Leap Motion} controller's vision. 
 
+\begin{figure}[!htb]
+\centering    
+\includegraphics[width=0.8\textwidth]{Figs/selecting.png}
+\caption{Selected atom and its details shown in the right upper corner. The cross hair is hidden, as time needed for details presentation has passed and pointing at other atoms is temporarily inactive.}
+\label{fig:selecting} 
+\end{figure}
 
+\subsection{Exit}
+
+As the re-typing of PDB ID code etc. requires taking off the HMD, there is no way to get back to main menu in single session. Changing of molecule code or chosen setting requires restarting of the program. 
+
+Closing the Molecule VR Viewer may be done by simply clicking the escape key on the keyboard. 
 
